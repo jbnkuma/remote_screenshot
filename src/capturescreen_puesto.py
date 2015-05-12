@@ -56,11 +56,11 @@ class TomaFoto(object):
             imagen_tmp = self.dir_tmp + "img_tmp.xwd"
             ssh_client = SSHClient()
             ssh_client.set_missing_host_key_policy(AutoAddPolicy())
-            ssh_client.connect(ip, username="jbnkuma", password="x2nakama.86")
+            ssh_client.connect(ip, username="", password="")
             cmd = "/usr/bin/hostname"
             stdin, stdout, stderr = ssh_client.exec_command(cmd)
             nombre_suc = stdout.read()
-            ssh_client.connect(ip, username="jbnkuma", password="x2nakama.86")
+            ssh_client.connect(ip, username="", password="")
             cmd = "/usr/bin/xwd -display :0.0  -root -silent "
             stdin, stdout, stderr = ssh_client.exec_command(cmd)
             imagen = stdout.read()
